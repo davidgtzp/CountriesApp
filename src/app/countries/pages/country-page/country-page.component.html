@@ -1,4 +1,6 @@
+
 <ng-template #loading>
+  <shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>
   <div class="alert alert-info text-center">
     Espere por favor
   </div>
@@ -23,7 +25,19 @@
       <h3>Información</h3>
       <ul class="list-group">
         <li class="list-group-item">
+          <strong>Capital:</strong> {{ country.capital[0] }}
+        </li>
+        <li class="list-group-item">
+          <strong>Región:</strong> {{ country.region }}
+        </li>
+        <li class="list-group-item">
+          <strong>Sub región:</strong> {{ country.subregion }}
+        </li>
+        <li class="list-group-item">
           <strong>Población:</strong> {{ country.population | number }}
+        </li>
+        <li class="list-group-item">
+          <strong>Area:</strong> {{ country.area | number }}
         </li>
         <li class="list-group-item">
           <strong>Código:</strong> {{ country.cca3 }}
@@ -46,5 +60,4 @@
       </div>
     </div>
   </div>
-
 </div>
